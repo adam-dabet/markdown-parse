@@ -13,8 +13,14 @@ public class MarkdownParseTest {
         assertEquals(2, 1 + 1);
     }
     @Test
-    public void Link() throws IOException {
+    public void TestFile1() throws IOException {
         String contentsTest = Files.readString(Path.of("test-file.md"));
         assertEquals(List.of("https://something.com", "some-page.html"), MarkdownParse.getLinks(contentsTest));
+    }
+
+    @Test
+    public void TestFile2() throws IOException {
+        String contentsTest = Files.readString(Path.of("test-file2.md"));
+        assertEquals(List.of("https://anything.com","another-page.html","a-page.html"), MarkdownParse.getLinks(contentsTest));
     }
 }

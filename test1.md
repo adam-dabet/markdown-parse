@@ -2,6 +2,6 @@
 
 [a link!](https://something.com)
 [another link!](some-page.html)
-![Image](http://url/a.png)
+![Image](key-gen.png)
 
 [3rd link!](last-link.html)

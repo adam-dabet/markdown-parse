@@ -1,6 +1,7 @@
 import static org.junit.Assert.*;
 import org.junit.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.io.IOException;
@@ -93,5 +94,23 @@ public class MarkdownParseTest {
         ArrayList<String> links = MarkdownParse.getLinks(contents);
         assertEquals(linkTester, links);
         System.out.println("test change 2");
+    }
+
+    @Test
+    public void TestNewFile1() throws IOException {
+        String contents = Files.readString(Path.of("/Users/adamdabet/Documents/Github/markdown-parse3.0/new-tests1.md"));
+        assertEquals(List.of("`google.com","google.com","ucsd.edu"), MarkdownParse.getLinks(contents));
+    }
+    
+    @Test
+    public void TestNewFile2() throws IOException {
+        String contents = Files.readString(Path.of("/Users/adamdabet/Documents/Github/markdown-parse3.0/new-tests2.md"));
+        assertEquals(List.of("a.com", "a.com(())","example.com"), MarkdownParse.getLinks(contents));
+    }
+    
+    @Test
+    public void TestNewFile3() throws IOException {
+        String contents = Files.readString(Path.of("/Users/adamdabet/Documents/Github/markdown-parse3.0/new-tests3.md"));
+        assertEquals(List.of("https://ucsd-cse15l-w22.github.io/"), MarkdownParse.getLinks(contents));
     }
 }

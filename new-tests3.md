@@ -19,6 +19,10 @@ And there's still some more text after that.
 
 
 
+<<<<<<< HEAD
 )
+=======
+
+>>>>>>> 64425688bd95b99d11ef687da08a58c4cd762fec
 
 And then there's more text
